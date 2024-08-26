@@ -4,7 +4,6 @@ This repository contains the official code and data for [our paper](https://dl.a
 
 Our work introduces an automated toolkit that leverages state-of-the-art computer vision and speech-to-text techniques to transcribe, diarize, and analyze thousands of YouTube videos from televised debates, offering profound insights into biases, incivility, and the overall quality of public discourse.
 
-
 ## Repository Structure and Contents
 
 ### Code
@@ -14,8 +13,9 @@ Our work introduces an automated toolkit that leverages state-of-the-art compute
 * **`transcription_related/run_pipeline_transcription.py`**: Transcribes each utterance identified during the diarization process, providing a text representation of the spoken content.
 * **`tv_debs_utils/debate_utils.py`**: Contains a set of utility functions for processing, downloading, and truncating videos.
 
-### Dataset
-This dataset contains metadata and labels for YouTube videos used in our work. Each entry in the dataset corresponds to a video and includes various fields detailing the video's attributes, statistics, and detected hashtags.
+
+### Dataset contents
+This dataset `data/video_details.json` contains metadata and labels for YouTube videos used in our work. Each entry in the dataset corresponds to a video and includes various fields detailing the video's attributes, statistics, and detected hashtags.
 - **`video_idx`**: A unique index assigned to each video in the dataset.
 - **`yt_vid_id`**: The unique identifier for the video on YouTube. This is the `videoId` that appears in YouTube URLs.
 - **`yt_vid_url`**: The full URL to the video on YouTube.
@@ -62,6 +62,19 @@ conda activate tv_debs_env
 3. Install the required dependencies
 ```bash
 pip install -r requirements.txt
+```
+
+### Usage
+```bash
+# To run the OSD+VAD pipeline
+television-discourse-decoded> python -m src.diarization_vad_osd_related.run_pipeline_osd_vad <Youtube ID of video to process>
+
+# To transcribe the video
+television-discourse-decoded> python -m src.transcription_related.run_pipeline_transcription <Youtube ID of video to process>
+
+# To measure foul speech in the transcribed content
+television-discourse-decoded> python -m src.perspective_related.run_pipeline_perspective
+
 ```
 
 ## Citation
