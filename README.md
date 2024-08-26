@@ -80,7 +80,7 @@ television-discourse-decoded> python -m src.perspective_related.run_pipeline_per
 ## Citation
 Please consider citing the following paper when using our code and dataset.
 
-```
+```bibtex
 @inproceedings{10.1145/3637528.3671532,
 author = {Agarwal, Anmol and Priyadarshi, Pratyush and Sinha, Shiven and Gupta, Shrey and Jangra, Hitkul and Kumaraguru, Ponnurangam and Garimella, Kiran},
 title = {Television Discourse Decoded: Comprehensive Multimodal Analytics at Scale},
